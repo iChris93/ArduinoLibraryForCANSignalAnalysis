@@ -1,4 +1,4 @@
-# ArduinoLibaryForCANSignalAnalysis
+# ArduinoLibraryForCANSignalAnalysis
 General Arduino Library to extract CAN signals from messages.
 
 Function:
