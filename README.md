@@ -3,7 +3,7 @@ General Arduino Library to extract CAN signals from messages.
 
 Function:
 
-int getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, float signalFactor, int signalOffset);
+`int getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, float signalFactor, int signalOffset);`
 
 with inputs from left to right:
 
