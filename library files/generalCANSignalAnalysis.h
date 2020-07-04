@@ -2,7 +2,7 @@
 //  generalCANSignalAnalysis.h
 //  To be used with CANserver created by Josh Wardell
 //
-//  Created by Chris Allemang on Jun 11 2020.
+//  Created by Chris Allemang on July 4 2020.
 //
 
 #ifndef generalCANSignalAnalysis_h
@@ -15,14 +15,19 @@ class generalCANSignalAnalysis
   public:
     generalCANSignalAnalysis(); //constructor
     //function to analyze CAN signal, inputs: 64 bit CANMessage, start bit location (indexed starting at 0), singal bit lenght, signal factor, singal offset
-    int getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, float signalFactor, int signalOffset); 
+    float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, int signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
+    float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, double signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
+  
   private: //private variables corresponding to the above public variables
     uint64_t _CANMessage;
-    int _signalMessage;
+    float _signalMessage;
     int _signalStartBit;
     int _signalLength;
-    float _signalFactor;
+    int _signalFactorInt;
+    double _signalFactorDouble;
     int _signalOffset;
+    bool _ISsigned;
+    bool _byteOrder;
 };
 
 
