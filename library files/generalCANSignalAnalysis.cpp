@@ -22,7 +22,7 @@ float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBi
     _signalOffset = signalOffset;
     _ISsigned = ISsigned;
     _byteOrder = byteOrder;
-    if (_byteOrder == 0){
+    if (_byteOrder == 1){
         _signalMessage = ((1 << _signalLength) - 1) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shfit
         if (_ISsigned == true){
             if(_signalMessage > pow(2, _signalLength-1))
@@ -48,7 +48,7 @@ float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBi
     _signalOffset = signalOffset;
     _ISsigned = ISsigned;
     _byteOrder = byteOrder;
-    if (_byteOrder == 0){
+    if (_byteOrder == 1){
         _signalMessage = ((1 << _signalLength) - 1) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shfit
         if (_ISsigned == true){
             if(_signalMessage > pow(2, _signalLength-1))
