@@ -1,5 +1,5 @@
 
-#include "generalCANSignalAnalysis.h" //Include library for analyzing CAN Signals
+#include <generalCANSignalAnalysis.h> //Include library for analyzing CAN Signals
 generalCANSignalAnalysis analyzeMessage; //initialize library
 uint64_t test = 0b0000000000000000000000000000000000110000010000000001000000111110100000001010010000010000; //test message having 42000 starting at bit 0, 16000 starting at bit 16, 16400 starting at bit 32, and 48 starting at bit 48
 void setup() {
