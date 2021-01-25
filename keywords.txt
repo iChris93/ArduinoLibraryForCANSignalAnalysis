@@ -1,0 +1,23 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+generalCANSignalAnalysis    KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+getSignal	KEYWORD2
+bigLittleSwap	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+
+#######################################
+# Constants (LITERAL1)
+####################################### 
+BIG_ENDIAN	LITERAL1
+LITTLE_ENDIAN	LITERAL1
