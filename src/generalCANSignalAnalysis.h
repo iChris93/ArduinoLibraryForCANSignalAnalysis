@@ -3,6 +3,7 @@
 //  To be used with CANserver created by Josh Wardell
 //
 //  Created by Chris Allemang on July 4 2020.
+//  Modified by E.Burkowski
 //
 
 #ifndef generalCANSignalAnalysis_h
@@ -10,10 +11,14 @@
 
 #include "Arduino.h"
 
+#define BIG_ENDIAN 0
+#define LITTLE_ENDIAN 1
+
 class generalCANSignalAnalysis
 {
   public:
     generalCANSignalAnalysis(); //constructor
+    uint64_t bigLittleSwap(uint64_t value);
     //function to analyze CAN signal, inputs: 64 bit CANMessage, start bit location (indexed starting at 0), singal bit lenght, signal factor, singal offset
     float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, int signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
     float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, double signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
