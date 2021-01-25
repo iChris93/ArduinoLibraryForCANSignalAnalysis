@@ -13,7 +13,7 @@ generalCANSignalAnalysis::generalCANSignalAnalysis() //constructor
 {
 }
 
-float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, int signalFactor, int signalOffset, bool ISsigned, bool byteOrder)
+float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, uint8_t signalStartBit, uint8_t signalLength, int signalFactor, int32_t signalOffset, bool ISsigned, bool byteOrder)
 {
     _CANMessage = CANMessage;
     _signalStartBit = signalStartBit;
@@ -39,7 +39,7 @@ float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBi
     return (_signalMessage); //return analyzed signal
 }
 
-float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, double signalFactor, int signalOffset, bool ISsigned, bool byteOrder)
+float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, uint8_t signalStartBit, uint8_t signalLength, double signalFactor, int32_t signalOffset, bool ISsigned, bool byteOrder)
 {
     _CANMessage = CANMessage;
     _signalStartBit = signalStartBit;
