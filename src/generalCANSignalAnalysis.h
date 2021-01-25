@@ -15,17 +15,17 @@ class generalCANSignalAnalysis
   public:
     generalCANSignalAnalysis(); //constructor
     //function to analyze CAN signal, inputs: 64 bit CANMessage, start bit location (indexed starting at 0), singal bit lenght, signal factor, singal offset
-    float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, int signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
-    float getSignal(uint64_t CANMessage, int signalStartBit, int signalLength, double signalFactor, int signalOffset, bool ISsigned, bool byteOrder);
+    float getSignal(uint64_t CANMessage, uint8_t signalStartBit, uint8_t signalLength, int signalFactor, int32_t signalOffset, bool ISsigned, bool byteOrder);
+    float getSignal(uint64_t CANMessage, uint8_t signalStartBit, uint8_t signalLength, double signalFactor, int32_t signalOffset, bool ISsigned, bool byteOrder);
   
   private: //private variables corresponding to the above public variables
     uint64_t _CANMessage;
     float _signalMessage;
-    int _signalStartBit;
-    int _signalLength;
+    uint8_t _signalStartBit;
+    uint8_t _signalLength;
     int _signalFactorInt;
     double _signalFactorDouble;
-    int _signalOffset;
+    int32_t _signalOffset;
     bool _ISsigned;
     bool _byteOrder;
 };
