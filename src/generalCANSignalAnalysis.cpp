@@ -3,6 +3,7 @@
 //  To be used with CANserver created by Josh Wardell
 //
 //  Created by Chris Allemang on July 4 2020.
+//  Modified by E.Burkowski
 //
 
 #include "Arduino.h"
@@ -23,7 +24,7 @@ float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBi
     _ISsigned = ISsigned;
     _byteOrder = byteOrder;
     if (_byteOrder == 1){
-        _signalMessage = ((1 << _signalLength) - 1) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shfit
+        _signalMessage = 0xFFFFFFFFul >> (32 - _signalLength) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shift
         if (_ISsigned == true){
             if(_signalMessage > pow(2, _signalLength-1))
             {
@@ -49,7 +50,7 @@ float generalCANSignalAnalysis::getSignal(uint64_t CANMessage, int signalStartBi
     _ISsigned = ISsigned;
     _byteOrder = byteOrder;
     if (_byteOrder == 1){
-        _signalMessage = ((1 << _signalLength) - 1) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shfit
+        _signalMessage = 0xFFFFFFFFul >> (32 - _signalLength) & (_CANMessage >> _signalStartBit); //mask unwanted bits and shift
         if (_ISsigned == true){
             if(_signalMessage > pow(2, _signalLength-1))
             {
